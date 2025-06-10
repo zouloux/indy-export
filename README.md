@@ -47,8 +47,8 @@ Here is the file structure :
 ```
 - receipts/
   - {id}/
-	  - receipt.json
-	  - receipt.(pdf|jpg|png)
+    - receipt.json
+    - receipt.(pdf|jpg|png)
 - transaction-objects/
   - transaction-{id}.json 
 - transaction-pages/
