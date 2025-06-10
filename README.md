@@ -15,20 +15,21 @@ cd indy-export
 
 #### Extract your authorization token
 This token is needed so this script will be able to get data from your account.
-You will find your authorization token :
+
+To get it:
 - Browse to https://app.indy.fr and log in
-- Open dev console on google chrome
-- Network tab
+- Open dev console
+- Go to network tab
 - Refresh page
-- Check any 'fetch/xhr' request
+- Check any 'fetch/xhr' request to their api
 - Get to the Headers and look for `Authorization`, it starts with `Bearer ...`
-- Remove the `Bearer` and save it somewhere.
+- Remove the `Bearer` part and save it somewhere.
 
 #### Dot env
 
 You can create a `.env` file with your token, otherwise the script will ask for it :
 ```dotenv
-INDY_AUTHORIZATION_BEARER=ey...
+INDY_AUTHORIZATION_BEARER=...
 ```
 
 #### Start script
