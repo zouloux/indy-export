@@ -1,7 +1,7 @@
 # Get all your data from Indy
 
 Because Indy is not a great service, you may need to export all your data manually.
-This should be allowed, but the customer service does not want to do it.
+The customer service does not accept to do it, but after paying months and months, I needed all my data to migrate to another tool.
 
 # How to use ?
 
@@ -14,8 +14,22 @@ cd indy-export
 ```
 
 #### Extract your authorization token
+This token is needed so this script will be able to get data from your account.
+You will find your authorization token :
+- Browse to https://app.indy.fr and log in
+- Open dev console on google chrome
+- Network tab
+- Refresh page
+- Check any 'fetch/xhr' request
+- Get to the Headers and look for `Authorization`, it starts with `Bearer ...`
+- Remove the `Bearer` and save it somewhere.
 
+#### Dot env
 
+You can create a `.env` file with your token, otherwise the script will ask for it :
+```dotenv
+INDY_AUTHORIZATION_BEARER=ey...
+```
 
 #### Start script
 
@@ -23,3 +37,21 @@ Start script using [Bun](https://bun.sh/) :
 ```shell
 bun index.ts
 ```
+
+#### Data
+
+Raw data will be found in `./data` directory. No data are modified by this script or used for something else.
+
+Here is the file structure :
+```
+- receipts/
+  - {id}/
+	  - receipt.json
+	  - receipt.(pdf|jpg|png)
+- transaction-objects/
+  - transaction-{id}.json 
+- transaction-pages/
+  - page-{page}.json
+```
+
+
